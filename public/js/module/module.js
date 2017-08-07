@@ -1,1 +1,1 @@
-var app = angular.module('lunchModule');
+var app = angular.module('lunchModule', ['ngRoute']);

@@ -1,10 +1,10 @@
-var app = angular.module('lunchModule', ["ngRoute"]);
+var app = angular.module('lunchModule');
 
 app.config(function($routeProvider) {  // Routing goes here.
   $routeProvider
-    .when ('/landng' , {
+    .when ('/landing' , {
       cotnroller: 'landingCrtl',
-      templateUrl: 'partials/landng.html'
+      templateUrl: 'partials/landing.html'
   })
 
     .when('/restaurant', {
@@ -17,5 +17,5 @@ app.config(function($routeProvider) {  // Routing goes here.
       templateUrl: 'partials/feederboard.html'
     })
 
-    .otherwise({ redirectTo: 'partials/landing.html'})
+    .otherwise({ redirectTo: 'partials/landing'})
 });
