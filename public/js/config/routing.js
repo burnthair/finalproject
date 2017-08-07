@@ -1,29 +1,21 @@
-var app = angular.module("lunchModule");
+var app = angular.module('lunchModule');
 
-app.config(function($routeProvider){
-    $routeProvider
-        .when("/landing",{
-            templateUrl:"./partials/landing.html",
-            controller:"./controllers/landing-ctrl.js"
+app.config(function($routeProvider) {  // Routing goes here.
+  $routeProvider
+    .when ('/landing' , {
+      cotnroller: 'landingCrtl',
+      templateUrl: 'partials/landing.html'
+  })
 
-        })
+    .when('/restaurant', {
+      controller: 'restaurantCtrl',
+      templateUrl: 'partials/restaurant.html'
+    })
 
-        .when("/restaurant", {
-            templateUrl: "./partials/restaurant.html",
-            controller: "./controllers/restaurant-ctrl.js"
+    .when('/feederboard', {
+      controller: 'feederboardCtrl',
+      templateUrl: 'partials/feederboard.html'
+    })
 
-        })
-
-        .when("/feeerboard", {
-            templateUrl: "./partials/feederboard.html",
-            controller: "./controllers/feederboard-ctrl.js"
-
-        })
-
-        .otherwise(redirectTo("/landing"))
-
-
-
-
-
+    .otherwise({ redirectTo: 'partials/landing'})
 });
