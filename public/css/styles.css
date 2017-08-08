@@ -1,0 +1,80 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-family: 'Titan One', cursive;
+  font-size: 6em;
+  color: white;
+  text-shadow: 0.1em 0.1em 0 #c6c6e0;
+}
+
+h3 {
+  font-family: 'Scope One', serif;
+  font-size: 3em;
+  color: #ff86d5;
+}
+
+input {
+  font-family: 'Scope One', serif;
+  padding: 0.5em;
+  border: none;
+  border-radius: 12px;
+  width: 40%;
+  box-shadow: 0.6em 0.6em 0 #c6c6e0;
+  margin-right: 20px;
+}
+
+button {
+  font-family: 'Scope One', serif;
+  padding: 0.5em;
+  border: none;
+  border-radius: 12px;
+  color: #242f3c;
+  background-color: white;
+  box-shadow: 0.6em 0.6em 0 #c6c6e0;
+  padding: 7px 40px;
+}
+
+.landing {
+  width: 100vw;
+  height: 100vh;
+  max-width:100%;
+  background-color: #870058;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-title-container {
+  width: auto;
+  text-align: center;
+  position: absolute;
+  top: 33%;
+}
+
+#img-drink, #img-pizza, #img-taco, #img-wrap {position: absolute;}
+#img-drink {width: 10%; top: 14%; left: 6vw;}
+#img-pizza {width: 22%; top: 59%; left: 5vw;}
+#img-taco {width: 16%; top: 70%; left: 30vw;}
+#img-wrap {width: 25%; top: 70%; left: 50vw;}

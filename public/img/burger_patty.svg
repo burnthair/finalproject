@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 434.89875 162.00337"
+   height="45.720951mm"
+   width="122.7381mm"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="burger_patty.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     id="namedview8257"
+     showgrid="false"
+     inkscape:zoom="0.49915474"
+     inkscape:cx="243.69834"
+     inkscape:cy="114.01872"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     inkscape:connector-curvature="0"
+     style="opacity:1;fill:#79440a;fill-opacity:1;stroke:none;stroke-width:1.96099997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 431.34539,80.5579 c 26.21674,56.068 -97.24823,81.7235 -218.51148,81.4432 C 93.59475,161.7254 -6.56325,147.7107 0.3365,80.5579 4.8891,36.249 96.82112,0 215.84095,0 334.86077,0 412.11704,39.4355 431.34539,80.5579 Z"
+     id="path4190" />
+</svg>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 484.735 163.55024"
+   height="46.157513mm"
+   width="136.80299mm"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="burger_shadow.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     id="namedview18346"
+     showgrid="false"
+     inkscape:zoom="0.63333572"
+     inkscape:cx="33.15777"
+     inkscape:cy="81.775121"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     inkscape:connector-curvature="0"
+     id="path18041"
+     d="m 484.735,81.8013 c 0,51.8839 -46.498,82.6345 -246.9246,81.7295 C 55.24928,162.7066 -2.36262,140.1138 0.07358,81.8013 2.23998,29.9523 104.50828,0 238.3439,0 372.1794,-1e-4 484.735,29.9173 484.735,81.8013 Z"
+     style="opacity:1;fill:#959595;fill-opacity:1;stroke:none;stroke-width:1.96099997;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+</svg>
