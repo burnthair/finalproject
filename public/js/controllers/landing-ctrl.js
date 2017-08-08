@@ -1,5 +1,5 @@
 var app = angular.module('lunchModule');
 
-app.controller('landingCtrl', function($scope, $locaton) {
+app.controller('landingCtrl', function($scope, $location) {
 
 });

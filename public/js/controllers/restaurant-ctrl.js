@@ -1,5 +1,5 @@
 var app = angular.module('lunchModule');
 
-app.controller('restaurantCtrl', function($scope, $locaton) {
+app.controller('restaurantCtrl', function($scope, $location) {
 
 });
