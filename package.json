@@ -9,7 +9,9 @@
     "pg": "^7.1.0",
     "request": "^2.81.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "dotenv": "^4.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
