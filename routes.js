@@ -27,8 +27,8 @@ router.get("/search", function(req, res,next){
             },
             form:
             {
-                client_id: 'eauRpAeBCINN3K1nAN1q6g',
-                client_secret: 'C3qSUaBgbSza3W0GfCbcnMH6O6GafAIap1B6hjBYq1nTBTAYv5QdUoDSojB12bdS',
+                client_id: "",
+                client_secret: "",
                 grant_type: 'client_credentials'
             }
         };
