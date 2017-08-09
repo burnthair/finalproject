@@ -1,5 +1,18 @@
-<h1>This is a feederboard partial</h1>
-
-<ul>
-  <li ng-repeat="business in businesses">{{ business.location.address1 }} </li>
-</ul>
+<div class="feederboard">
+  <h4>THE FEEDERBOARD</h4>
+  <span id="groupt-label">Group: </span><select name="group" id="group-select">
+    <option value="">Grand Circus</option>
+    <option value="">Quicken</option>
+    <option value="">DTE</option>
+    <option value="">Ford</option>
+  </select>
+  <div class="feederboard-list-container">
+    <restaurant-list-item></restaurant-list-item> <!-- we will ng-repeat these -->
+    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item></restaurant-list-item>
+  </div>
+</div>
