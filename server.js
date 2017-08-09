@@ -6,11 +6,14 @@ var pg = require("pg");
 var routes=require("./routes");
 
 var port=process.env.PORT||5000;
-var pool = require("./pg-connectionpool.js");
+//var pool = require("./pg-connectionpool");
+
+
 
 app.use(bodyParser.json());       
 app.use(bodyParser.urlencoded({extended: true})); 
 app.use("/api", routes.router);
+app.use(express.static(__dirname+ '/public'));
 
 
 app.listen(port, function () {

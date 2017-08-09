@@ -3,7 +3,7 @@ var app = angular.module('lunchModule');
 app.config(function($routeProvider) {  // Routing goes here.
   $routeProvider
     .when ('/landing' , {
-      cotnroller: 'landingCrtl',
+      controller: 'landingCtrl',
       templateUrl: 'partials/landing.html'
   })
 

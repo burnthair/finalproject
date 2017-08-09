@@ -1,16 +1,11 @@
 <div class="restaurants">
-  <img id="left-arrow" src="./img/left_arrow.svg" alt="">
+  <img id="left-arrow" ng-click="toLanding()" src="./img/left_arrow.svg" alt="">
   <input class="restaurant-search" type="text" placeholder="search">
-  <img id="right-arrow" src="./img/right_arrow.svg" alt="">
+  <img id="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
   <h4>displaying TYPE OF RESTAURANT restuarants within a mile</h4>
   <div class="restaurant-list-container">
-    <restaurant-list-item></restaurant-list-item> <!-- we will ng-repeat these -->
-    <restaurant-list-item></restaurant-list-item>
-    <restaurant-list-item></restaurant-list-item>
-    <restaurant-list-item></restaurant-list-item>
-    <restaurant-list-item></restaurant-list-item>
-    <restaurant-list-item></restaurant-list-item>
-    <restaurant-list-item></restaurant-list-item>
+    <restaurant-list-item ng-repeat="place in data track by $index"></restaurant-list-item> 
+    
   </div>
   <button type="" ng-submit="">WHAT'S EVERYONE ELSE HAVING?</button>
 </div>
