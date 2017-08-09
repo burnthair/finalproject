@@ -27,8 +27,8 @@ var auth={};
 //             },
 //             form:
 //             {
-//                 client_id: 'eauRpAeBCINN3K1nAN1q6g',
-//                 client_secret: 'C3qSUaBgbSza3W0GfCbcnMH6O6GafAIap1B6hjBYq1nTBTAYv5QdUoDSojB12bdS',
+//                 client_id: ',
+//                 client_secret: ,
 //                 grant_type: 'client_credentials'
 //             }
 //         };
@@ -57,8 +57,7 @@ var data={};
         {
             'postman-token': '4e034573-7290-50e9-04da-162b718ab23a',
             'cache-control': 'no-cache',
-            'authorization': "Bearer K_PQ3CzLELpz-MgkBPPvSG6IEZT7a3ZBUCXh5pduDgOusntHyITg39wXDZtLJZD5bw1VhaB13h49XLgN-5tfSbf2GjIMHROR3l2_tNb28j2XUtTqm9MmDh29plSHWXYx"
-
+            'authorization': 
         }
     };
 
