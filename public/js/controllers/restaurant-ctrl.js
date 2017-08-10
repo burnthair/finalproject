@@ -3,7 +3,7 @@ var app = angular.module('lunchModule');
 app.controller('restaurantCtrl', function($scope, $location,landingService,resService) {
 
     $scope.data=landingService.getSearch();
-    console.log($scope.data);
+    //console.log($scope.data);
     $scope.toLanding=function(){
         $location.path("/landing");
 
@@ -18,7 +18,7 @@ app.controller('restaurantCtrl', function($scope, $location,landingService,resSe
             address2, 
             price, 
             rating).then(function (success) {
-                resService.getData();
+               return resService.getData();
             }).then(function(success){
                 $location.path("/feederboard");
 
@@ -26,7 +26,7 @@ app.controller('restaurantCtrl', function($scope, $location,landingService,resSe
 
     $scope.print=function(item){
 
-        console.log(item);
+      //  console.log(item);
     };
 
     $scope.toFeederboard = function () {

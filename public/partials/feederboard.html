@@ -6,8 +6,8 @@
     <option value="">DTE</option>
     <option value="">Ford</option>
   </select>
-  <div class="feederboard-list-container" ng-repeat="restaurant in data">
-    <restaurant-list-item></restaurant-list-item> <!-- we will ng-repeat these -->
+  <div class="feederboard-list-container" ng-repeat="place in data track by $index">
+    <feederboard-item></feederboard-item> <!-- we will ng-repeat these -->
 
   </div>
 </div>
