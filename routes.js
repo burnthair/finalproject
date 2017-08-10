@@ -9,6 +9,8 @@ var router=express.Router();
 // var bodyParser = require('body-parser')
 
 var auth={};
+/////working progress to automatically reauthenticate yelp api token once it expires
+
 
 //get token
 
@@ -45,6 +47,8 @@ var auth={};
 //         // console.log(body);
 //             });
 //    });
+
+///get method, takes search term from landing page and calls yelp api, then returns a json of results
 router.get("/search/:searchTerm", function (req, res) {
 var data={};
     var options = {
@@ -63,50 +67,53 @@ var data={};
             'authorization': "Bearer K_PQ3CzLELpz-MgkBPPvSG6IEZT7a3ZBUCXh5pduDgOusntHyITg39wXDZtLJZD5bw1VhaB13h49XLgN-5tfSbf2GjIMHROR3l2_tNb28j2XUtTqm9MmDh29plSHWXYx"
         }
     };
-
-    request(options, function (error, response, body) {
-        data=body;
-        // if (error) throw new Error(error);
-        //console.log(date.getTime());
-        //console.log(auth.expires_at);
-        res.send(data);
-       // console.log("Seach body is" + data);
+    ///actual yelp get request, calls yelp api using options from above
+        request(options, function (error, response, body) {
+            data=body;
         
-    });
+            //Send response data back to angular
+            res.send(data);
+        // console.log("Seach body is" + data);
+            
+        });
   
     });
 
-
+///Post request to send data from yelp api for selected resturant on the resturant view to database for storage
 router.post("/reserve", function(req, res){
-    // console.log("Got the post");
-    // console.log(req.body
-var values=[
-    "Grand Circus",
-    req.body.id,
-    req.body.name,
-    req.body.address1,
-    req.body.adress2,
-    req.body.rating,
-    req.body.price,
-    req.body.personName,
+        // console.log("Got the post");
+        // console.log(req.body
 
-]
-    
-conPool.pool.connect(function (err, client, done) {
+    //Collects values sent from angular ng-repeats  from yelp    
+    var values=[
+        "Grand Circus",
+        req.body.id,
+        req.body.name,
+        req.body.address1,
+        req.body.adress2,
+        req.body.rating,
+        req.body.price,
+        req.body.personName,
 
-    console.log("Posting");
-        client.query(
-            'INSERT INTO public.customer (personorg, resid, resname, resaddress1, resaddress2, resrating, resprice, personname)'+
-            'values($1::text, $2::text, $3::text, $4::text, $5::text, $6::real, $7::text, $8::text)',
-            values, 
-            function (err, result) {
-                 done();
-            //     if (err) return console.error(err);
-                // console.log("Posted")
-                //  console.log(result.rows);
-            });
-    });
-    res.sendStatus(200);
+    ]
+
+    ///Takes values and iserts data into database    
+    conPool.pool.connect(function (err, client, done) {
+
+       // console.log("Posting");
+            client.query(
+                'INSERT INTO public.customer (personorg, resid, resname, resaddress1, resaddress2, resrating, resprice, personname)'+
+                'values($1::text, $2::text, $3::text, $4::text, $5::text, $6::real, $7::text, $8::text)',
+                values, 
+                function (err, result) {
+                    done();
+                //     if (err) return console.error(err);
+                    // console.log("Posted")
+                    //  console.log(result.rows);
+                });
+        });
+        //when response is good, send good status back to angular to set off promise chain
+        res.sendStatus(200);
   
 });
 
@@ -125,8 +132,8 @@ router.get("/reserve", function (req, res) {
         GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice',
              function (err, result) {
                 done();
-                // if (err) return console.error(err);
-                //console.log("The result is "+result);
+                if (err) return console.error(err);
+                console.log("The result is "+result);
                 res.send(result);
                
             })

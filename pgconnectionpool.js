@@ -9,6 +9,8 @@
 // }
 
 var url = require('url');
+
+///creates instnaces of pg references
 const { Pool, Client } = require('pg')
 
 try {
@@ -17,10 +19,12 @@ try {
 
 }
 
+///console logs connection credentials as a check
 console.info('DATABASE_URL:', process.env.DATABASE_URL);
 var params = url.parse(process.env.DATABASE_URL);
 var auth = params.auth.split(':');
 
+//config is fed into connction pool, supplies database credentials
 var config = {
     user: auth[0],
     password: auth[1],
@@ -31,7 +35,7 @@ var config = {
 };
 
 // const pool= 
-
+///Export pool with db credentials for use in routing
     module.exports.pool = new Pool(config);
 
 
