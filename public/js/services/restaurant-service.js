@@ -6,7 +6,7 @@ app.factory("resService", function ($http, $httpParamSerializer){
     var feederData=[];
 
 function setData(id, name, personName,address1, address2, price, rating){
-        console.log("Posting");
+       // console.log("Posting");
 
     var data= {id: id,
                 name: name,
@@ -34,8 +34,8 @@ function getData() {
         method: "GET",
         url: "/api/reserve",
     }).then(function(response){
-        feederData=response;
-        console.log(response);
+        feederData=response.data.rows;
+     //   console.log(feederData);
        // return feederData;
     });
 
@@ -44,6 +44,7 @@ function getData() {
 
 
 function returnData(){
+   // console.log(feederData);
     return feederData;
 
 };

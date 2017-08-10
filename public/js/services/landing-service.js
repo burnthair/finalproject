@@ -16,14 +16,14 @@ setSearch=function(term){
         //console.log("got stuff");
         payload=response.data.businesses;
       $location.path("/restaurant");
-        console.log(payload);
+     //   console.log(payload);
     });
 
     return promise;
 };
 
 getSearch=function(){
-    console.log("Getting data");
+   // console.log("Getting data");
     return payload;
 }
 

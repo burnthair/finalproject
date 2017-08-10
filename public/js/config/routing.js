@@ -17,5 +17,5 @@ app.config(function($routeProvider) {  // Routing goes here.
       templateUrl: 'partials/feederboard.html'
     })
 
-    .otherwise({ redirectTo: 'landing'})
+    .otherwise({ redirectTo: '/landing'})
 });

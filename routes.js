@@ -101,7 +101,7 @@ conPool.pool.connect(function (err, client, done) {
             values, 
             function (err, result) {
                  done();
-                 if (err) return console.error(err);
+            //     if (err) return console.error(err);
                 // console.log("Posted")
                 //  console.log(result.rows);
             });
@@ -115,7 +115,7 @@ conPool.pool.connect(function (err, client, done) {
 
 
 router.get("/reserve", function (req, res) {
-    console.log("Getting the post");
+  //  console.log("Getting the post");
     // console.log(req.body
 
     conPool.pool.connect(function (err, client, done) {
@@ -137,11 +137,5 @@ router.get("/reserve", function (req, res) {
 
 // });
     
-
-
-
-
-
-
 
 module.exports.router=router;
