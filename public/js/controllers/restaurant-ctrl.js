@@ -3,6 +3,10 @@ var app = angular.module('lunchModule');
 
 // Create the controller for the Restaurant List view
 app.controller('restaurantCtrl', function($scope, $location, landingService, resService) {
+  
+  $scope.panelSlide=false;
+  //Gets user name
+  $scope.userName=landingService.getName();
   // Get the search term that was stored in the Landing service
   $scope.searchTerm = landingService.getSearchTerm();
   // Use the getSeach function in landingService to get resturants meeting search term in earea
@@ -16,8 +20,8 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
     $location.path("/feederboard");
   };
   // uses function from resService to take the info from clicked div and send to to database
-  $scope.setData = function(id, name, personName, address1, address2, price, rating) {
-    resService.setData(id, name, personName, address1, address2, price, rating)
+  $scope.setData = function(id, name, personName, address1, address2, price, rating, message) {
+    resService.setData(id, name, personName, address1, address2, price, rating, message)
       .then(function(success) {
         return resService.getData();
       })

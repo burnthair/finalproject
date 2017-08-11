@@ -95,6 +95,7 @@ router.post("/reserve", function(req, res){
         req.body.rating,
         req.body.price,
         req.body.personName,
+        req.body.message
 
     ]
 
@@ -103,8 +104,8 @@ router.post("/reserve", function(req, res){
 
        // console.log("Posting");
             client.query(
-                'INSERT INTO public.customer (personorg, resid, resname, resaddress1, resaddress2, resrating, resprice, personname)'+
-                'values($1::text, $2::text, $3::text, $4::text, $5::text, $6::real, $7::text, $8::text)',
+                'INSERT INTO public.customer (personorg, resid, resname, resaddress1, resaddress2, resrating, resprice, personname, personmsg)'+
+                'values($1::text, $2::text, $3::text, $4::text, $5::text, $6::real, $7::text, $8::text, 9::text)',
                 values,
                 function (err, result) {
                     done();

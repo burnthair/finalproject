@@ -9,6 +9,10 @@ app.controller('landingCtrl', function($scope, $location, landingService) {
   };
   $scope.seeWhats = function() {
     landingService.setSearch("");
+    landingService.setName($scope.name);
     $location.path("/restaurant");
   };
+
+  $scope.userName;
+
 });

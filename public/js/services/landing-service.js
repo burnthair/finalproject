@@ -8,6 +8,8 @@ app.factory("landingService", function($http, $location) {
   var payload = [];
   // Create a variable to store the search term in for recall on the Restaurant List view
   var searchTerm;
+
+  var userName;
   // Method that makes API call to Yelp and returns data meeting search term via primises
   setSearch = function(term) {
     var promise = $http({
@@ -31,8 +33,20 @@ app.factory("landingService", function($http, $location) {
   getSearchTerm = function(){
     return searchTerm;
   }
+
+  setName=function(name){
+    userName=name;
+
+  };
+
+  getName=function(){
+    return userName;
+  };
+
   // Returns the get and set functions for use in directives
   return {
+      getName:getName,
+      setName: setName,
       setSearch: setSearch,
       getSearch: getSearch,
       getSearchTerm: getSearchTerm
