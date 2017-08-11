@@ -1,14 +1,14 @@
 var express = require('express');
-var http=require('http');
+var http = require('http');
 var request = require("request");
-var pg=require("pg");
-var conPool=require("./pgconnectionpool");
+var pg = require("pg");
+var conPool = require("./pgconnectionpool");
 var url = require('url');
-var router=express.Router();
+var router = express.Router();
 
 // var bodyParser = require('body-parser')
 
-var auth={};
+var auth = {};
 /////working progress to automatically reauthenticate yelp api token once it expires
 
 
@@ -21,7 +21,7 @@ var auth={};
 //         next("route");
 //         }  else {next()}
 //     },*/
- 
+
 //     function(req, res,next) {
 //         var options = {
 //             method: 'POST',
@@ -57,8 +57,9 @@ var data={};
         qs:
         {
             term: req.params.searchTerm,
-            latitude: '37.786882',
-            longitude: '-122.399972'
+            radius: 1609,
+            latitude: '42.3359244',
+            longitude: '-83.0519076'
         },
         headers:
         {
@@ -70,13 +71,13 @@ var data={};
     ///actual yelp get request, calls yelp api using options from above
         request(options, function (error, response, body) {
             data=body;
-        
+
             //Send response data back to angular
             res.send(data);
         // console.log("Seach body is" + data);
-            
+
         });
-  
+
     });
 
 ///Post request to send data from yelp api for selected resturant on the resturant view to database for storage
@@ -84,7 +85,7 @@ router.post("/reserve", function(req, res){
         // console.log("Got the post");
         // console.log(req.body
 
-    //Collects values sent from angular ng-repeats  from yelp    
+    //Collects values sent from angular ng-repeats  from yelp
     var values=[
         "Grand Circus",
         req.body.id,
@@ -97,14 +98,14 @@ router.post("/reserve", function(req, res){
 
     ]
 
-    ///Takes values and iserts data into database    
+    ///Takes values and iserts data into database
     conPool.pool.connect(function (err, client, done) {
 
        // console.log("Posting");
             client.query(
                 'INSERT INTO public.customer (personorg, resid, resname, resaddress1, resaddress2, resrating, resprice, personname)'+
                 'values($1::text, $2::text, $3::text, $4::text, $5::text, $6::real, $7::text, $8::text)',
-                values, 
+                values,
                 function (err, result) {
                     done();
                 //     if (err) return console.error(err);
@@ -114,7 +115,7 @@ router.post("/reserve", function(req, res){
         });
         //when response is good, send good status back to angular to set off promise chain
         res.sendStatus(200);
-  
+
 });
 
 
@@ -135,14 +136,14 @@ router.get("/reserve", function (req, res) {
                 if (err) return console.error(err);
                 console.log("The result is "+result);
                 res.send(result);
-               
+
             })
     });
-   
+
 
 });
 
 // });
-    
+
 
 module.exports.router=router;

@@ -1,56 +1,55 @@
+// Import Angular module
 var app = angular.module('lunchModule');
 
-app.factory("resService", function ($http, $httpParamSerializer){
+// Create a service to handle calls from the database
+app.factory("resService", function ($http, $httpParamSerializer) {
 
-    //Placeholder for data returned from database that will populate third feederboard view
-    var feederData=[];
+  // Create variable for data returned from the database that will populate the Feederboard view
+  var feederData = [];
 
-    //Function takes parameters from Angular item to send to database
-    function setData(id, name, personName,address1, address2, price, rating){
-        // console.log("Posting");
-
-        var data= {id: id,
-                    name: name,
-                    personName:personName,
-                    address1:address1,
-                    address2: address2,
-                    price:price,
-                    rating:rating
-        };
-
-        var p=$http({
-            method:"POST",
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url:"/api/reserve",
-            data: $.param( data)
-        });
-    
-        return p;
+  // Function takes parameters from Angular item to send to database
+  function setData(id, name, personName, address1, address2, price, rating) {
+    var data = {
+      id: id,
+      name: name,
+      personName: personName,
+      address1: address1,
+      address2: address2,
+      price: price,
+      rating: rating
     };
+    var p = $http({
+      method: "POST",
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      url: "/api/reserve",
+      data: $.param(data)
+    });
+    return p;
+  };
 
+  // Create function
+  function getData() {
+    var p = $http({
+      method: "GET",
+      url: "/api/reserve",
+    })
+    .then(function(response) {
+      feederData = response.data.rows;
+      return feederData;
+    });
+    return p;
+  };
 
-    function getData() {
-        console.log("Getting");
-        var p = $http({
-            method: "GET",
-            url: "/api/reserve",
-        }).then(function(response){
-            feederData=response.data.rows;
-        //   console.log(feederData);
-        return feederData;
-        });
+  // Create function to return the data to populate the Feederboard
+  function returnData() {
+    return feederData;
+  };
 
-        return p;
-    };
-
-
-    function returnData(){
-    // console.log(feederData);
-        return feederData;
-
-    };
-    return {setData:setData,
-            getData:getData,
-            returnData:returnData};
+  // Return the set, get, and return functions
+  return {
+    setData:setData,
+    getData:getData,
+    returnData:returnData
+  };
 
 });

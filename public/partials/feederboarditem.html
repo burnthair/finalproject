@@ -1,15 +1,17 @@
 <div class="feederboard-item">
   <div class="fb-image-container">
-    <!-- <img src="{{ image }}" alt="{{ image name }}"> -->
+    <img src="http://via.placeholder.com/350x250" alt="">
   </div>
   <div class="fb-detail-container">
     <ul>
-      <li>{{place.resname}}</li>
-      <li>{{place.address1}}</li>
-      <li>{{place.address2}}</li>
-      <li>{{place.resprice}}</li>
-      <li>{{ place.resrating}}</li>
-       <div ng-repeat="person in place.person track by $index">{{person}}</div> 
+      <li>{{ place.resname }}</li>
+      <li>{{ place.location.address1 }}</li>
+      <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
+      <li>{{ place.resprice }}</li>
+      <li>{{ place.resrating }}</li>
     </ul>
+  </div>
+  <div class="fb-joined-by">
+    <p ng-repeat="person in place.person track by $index">{{ person }}</p>
   </div>
 </div>

@@ -4,12 +4,12 @@
   </div>
   <div class="rli-detail-container">
     <ul>
-      <li>{{place.name}}</li>
-      <li>{{place.display_address[0]}}</li>
-      <li>{{place.display_address[1]}}</li>
-      <li>{{place.rating}}</li>
-      <li>{{place.price}}</li>
-      <li>{{place.id}}</li>
+      <li>{{ place.name }}</li>
+      <li>{{ place.location.address1 }}</li>
+      <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
+      <li>{{ place.display_phone }}</li>
+      <li>{{ place.rating }}</li>
+      <li>{{ place.price }}</li>
     </ul>
   </div>
   <div class="rli-suggested-by">
@@ -18,28 +18,5 @@
   <div class="rli-joined-by">
     <p>Joined By: joined by</p>
   </div>
-<div class="rli-input">
-
- 
-      </div>
+<!-- <div class="rli-input"></div> -->
 </div>
-
-<!-- <div class="restaurant-list-item">
-  <div class="rli-image-container">
-    <img src="{{ image }}" alt="{{ image name }}">
-  </div>
-  <div class="rli-detail-container">
-    <ul>
-      <li>{{ restaurant name }}</li>
-      <li>{{ address }}</li>
-      <li>{{ city }}, {{ state }} {{ zip }}</li>
-      <li>{{ price rating }}</li>
-    </ul>
-  </div>
-  <div class="rli-suggested-by">
-    <p>Suggested By: {{ suggested by }}</p>
-  </div>
-  <div class="rli-joined-by">
-    <p>Joined By: {{ joined by }}</p>
-  </div>
-</div> -->

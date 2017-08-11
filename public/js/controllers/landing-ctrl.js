@@ -1,20 +1,14 @@
+// Import Angular module
 var app = angular.module('lunchModule');
 
-app.controller('landingCtrl', function($scope, $location,landingService) {
-
-   // console.log("landing ctrl loaded");
-    $scope.search="";
-    $scope.setSearch=function(parm){
-        landingService.setSearch(parm)
-        
-    };
-    
-    $scope.seeWhats=function(){
-        landingService.setSearch("");
-       // console.log("clicked");
-        $location.path("/restaurant");
-    
-    }
-
-
+// Create the controller for the Landing view
+app.controller('landingCtrl', function($scope, $location, landingService) {
+  $scope.search = "";
+  $scope.setSearch = function(param) {
+    landingService.setSearch(param);
+  };
+  $scope.seeWhats = function() {
+    landingService.setSearch("");
+    $location.path("/restaurant");
+  };
 });
