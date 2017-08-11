@@ -18,7 +18,13 @@ app.factory("landingService", function($http, $location) {
     })
     .then(function(response) {
       payload = response.data.businesses;
-      searchTerm = term;
+
+      if (term = "restaurant") {
+        searchTerm = "all";
+      } else {
+        searchTerm = term;
+      }
+
       $location.path("/restaurant");
     });
     return promise;

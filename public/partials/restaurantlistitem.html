@@ -1,10 +1,10 @@
 <div class="restaurant-list-item">
   <div class="rli-image-container">
-    <img src="http://via.placeholder.com/350x250" alt="">
+    <img src="{{ place.image_url }}" alt="">
   </div>
   <div class="rli-detail-container">
     <ul>
-      <li>{{ place.name }}</li>
+      <a href="{{ place.url }}" target="_blank"><li>{{ place.name }}</li></a>
       <li>{{ place.location.address1 }}</li>
       <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
       <li>{{ place.display_phone }}</li>

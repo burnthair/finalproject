@@ -1,8 +1,8 @@
 <div class="restaurants">
   <img class="left-arrow" ng-click="toLanding()" src="./img/left_arrow.svg" alt="">
-  <input class="restaurant-search" type="text" placeholder="search">
+  <input class="restaurant-search" type="text" placeholder="filter results" ng-model="search">
   <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
-  <h4>displaying {{ searchTerm }} restuarants within a mile</h4>
+  <h4>displaying {{ titleTerm }} restuarants within a mile</h4>
   <div class="restaurant-list-container">
 
 
