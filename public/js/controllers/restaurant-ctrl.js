@@ -5,6 +5,8 @@ var app = angular.module('lunchModule');
 app.controller('restaurantCtrl', function($scope, $location, landingService, resService) {
   // Get the search term that was stored in the Landing service
   $scope.searchTerm = landingService.getSearchTerm();
+  $scope.titleTerm = landingService.getSearchTerm();
+
   // Use the getSeach function in landingService to get resturants meeting search term in earea
   $scope.data = landingService.getSearch();
   // If user doesn't want to search, calls yelp api with default values
