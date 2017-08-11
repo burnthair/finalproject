@@ -1,38 +1,41 @@
+// Import Angular module
 var app = angular.module('lunchModule');
 
-app.factory("landingService",function($http, $location){
+// Create a service to handle pulling the data from the Yelp API
+app.factory("landingService", function($http, $location) {
 
-///Placeholder for data returned from yelp API call
-var payload=[];
-
-
-////Method that makes api call to yelp and returns data meeting search term via primises
-setSearch=function(term){
-    //console.log("Getting stuff");
-    var promise=$http({
-        method:"GET",
-        url:"/api/search/"+term
-    }).then(function(response){
-        //console.log("got stuff");
-        payload=response.data.businesses;
+  // Create variable to hold the data returned from Yelp API call
+  var payload = [];
+  // Create a variable to store the search term in for recall on the Restaurant List view
+  var searchTerm;
+  // Method that makes API call to Yelp and returns data meeting search term via primises
+  setSearch = function(term) {
+    var promise = $http({
+      method:"GET",
+      url:"/api/search/" + term
+    })
+    .then(function(response) {
+      payload = response.data.businesses;
+      searchTerm = term;
       $location.path("/restaurant");
-     //   console.log(payload);
     });
-
     return promise;
-};
+  };
 
-
-///Returns data from yelp api obtained useing setSearch above
-getSearch=function(){
-   // console.log("Getting data");
+  // Function to return data from Yelp API obtained using setSearch above
+  getSearch = function() {
     return payload;
-}
+  };
 
-    ///Returns get and set functions for use in directives
-    return {
-        setSearch: setSearch,
-        getSearch: getSearch
-    }
+  // Function to return the search term for display on the Restaurant List view
+  getSearchTerm = function(){
+    return searchTerm;
+  }
+  // Returns the get and set functions for use in directives
+  return {
+      setSearch: setSearch,
+      getSearch: getSearch,
+      getSearchTerm: getSearchTerm
+  };
 
 });

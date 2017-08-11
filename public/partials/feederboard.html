@@ -1,13 +1,14 @@
 <div class="feederboard">
+  <img class="left-arrow" ng-click="toRestaurantList()" src="./img/left_arrow.svg" alt="">
   <h4>THE FEEDERBOARD</h4>
-  <span id="groupt-label">Group: </span><select name="group" id="group-select">
+  <img class="home-button" ng-click="toLanding()" src="./img/home.svg" alt="">
+  <span id="group-label">Group: </span><select name="group" id="group-select">
     <option value="">Grand Circus</option>
     <option value="">Quicken</option>
     <option value="">DTE</option>
     <option value="">Ford</option>
   </select>
-  <div class="feederboard-list-container" ng-repeat="place in data track by $index">
-    <feederboard-item></feederboard-item> <!-- we will ng-repeat these -->
-
+  <div class="feederboard-list-container">
+    <feederboard-item ng-repeat="place in data track by $index"></feederboard-item>
   </div>
 </div>
