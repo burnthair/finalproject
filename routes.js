@@ -78,7 +78,7 @@ router.get("/search/:searchTerm", function(req, res) {
 router.post("/reserve", function(req, res){
   // Collects values sent from angular ng-repeats  from yelp
   var values = [
-    req.org,
+    req.body.org,
     req.body.id,
     req.body.name,
     req.body.personName,
@@ -97,7 +97,7 @@ router.post("/reserve", function(req, res){
 
     client.query(
     'DELETE from public.customer \
-    WHERE personemail=values($5::text)',
+    WHERE personemail=values($4::text)',
     values,
     function (err, result) {
               done();
@@ -105,7 +105,8 @@ router.post("/reserve", function(req, res){
 
   client.query(
     'INSERT INTO public.customer (personorg\
-                                , resid, resname\
+                                , resid\
+                                , resname\
                                 , personname\
                                 , personemail\
                                 , resaddress1\
@@ -114,8 +115,8 @@ router.post("/reserve", function(req, res){
                                 , resrating\
                                 , personmsg\
                                 , resimg\
-                                , persontime)' +
-                          'values($1::text\
+                                , persontime)\
+                          values($1::text\
                             , $2::text\
                             , $3::text\
                             , $4::text\
@@ -148,15 +149,16 @@ router.get("/reserve", function(req, res) {
     ,resrating\
     ,resprice\
     ,resimg\
-    ,count(distinct personname) as count\
+    ,cast(count(distinct personname) as integer) as count\
     ,array_agg(t.personname) as person\
     ,array_agg(cast(t.personname::text||\'@\'||t.persontime::text||\': \' ||t.personmsg::text as varchar)) as messages\
      FROM public.customer t \
-     GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice,resimg,personorg',
+     GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice,resimg,personorg\
+     order by count desc',
     function(err, result) {
       done();
       if (err) return console.error(err);
-      console.log("The result is "+result);
+      // console.log("The result is "+result);
       res.send(result);
     });
   });
