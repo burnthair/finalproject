@@ -15,7 +15,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 16px;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -26,19 +26,22 @@ ul {
 }
 
 /* SET FONT FAMILIES*/
-h1, h4 {
-  font-family: "Automania";
+h1, button, h4 {
+ font-family: league-gothic, sans-serif;
+
 }
 
-h3, input, button, p, li {
+h3, input,  p, li {
 	font-family: 'Scope One', serif;
 }
 
 /* GLOBAL */
 h1 {
-  font-size: 16vw;
+  font-size: 18vw;
+   font-weight: 900;
 	line-height: 0.9em;
   color: white;
+text-shadow: 0 0.02em 0.08em #444;
 
 }
 
@@ -56,11 +59,12 @@ h4 {
 input {
   padding: 1.5vh;
   border: none;
-  border-radius: 12px;
+  border-radius: 4px;
   width: 90%;
-  box-shadow: 0.6em 0.6em 0 #c6c6e0;
+    box-shadow: 0 0.1em 0.3em #888;
   margin: 4vh 0;
 	box-sizing: border-box;
+	font-size: 1.5rem;
 }
 
 input.restaurant-search {
@@ -70,17 +74,26 @@ input.restaurant-search {
 button {
   padding: 0.7em;
   border: none;
-  border-radius: 12px;
-  color: #242f3c;
-  background-color: white;
+  border-radius: 2px;
+  color: white;
+  background-color: #22d4d4;
 	width: 90%;
-  box-shadow: 0.6em 0.6em 0 #c6c6e0;
+  box-shadow: 0em 0.1em 0.3em #666;
   padding: 1.5vh;
 	margin: 1vh 0;
+	font-size: 1.5rem;
+	letter-spacing: 2.5px;
+
+}
+
+button:hover {
+
+	  box-shadow: 0em 0.1em 0.8em #666;
+		transform: translate(0,-.2vh);
 }
 
 li, p {
-	font-size: 2vh;
+	font-size: 3vw;
 	line-height: 1em;
 }
 
@@ -89,7 +102,7 @@ li, p {
   width: 100vw;
   max-width:100%;
 	height: 100vh;
-  background-color: rgb(15, 7, 175);
+  background-color:#ff616f;
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
@@ -237,7 +250,7 @@ li, p {
 
 	/*#img-drink, #img-pizza, #img-taco, #img-wrap {display: block; position: absolute;}*/
 	#taco-drink {display: none;}
-	#food-group {display: block; width: 60vw; position: absolute; left: 10vw; top: 48vh;}
+	#food-group {display: block; width: 60vw; position: absolute; left: 10vw; top: 42vh;}
 
 	#food-type-search, #food-type-submit {
 		width: 50vw;
@@ -250,7 +263,36 @@ li, p {
     width: 50vw;}
 }
 
-@media (min-width:961px) {#landing-heading{}}
+@media (min-width:961px) {
+	#landing-heading{
+		
+
+	}
+
+	#food-type-submit {
+		display: inline-block;
+
+	}
+
+	#food-type-search {
+	
+	}
+
+	#food-group {
+		left:2vw;
+		max-width: 40vw;
+		top: 60vh;
+		
+	}
+
+	#food-type-skip {
+		right: 8vw;
+		bottom: 14vh;
+		max-width: 30vw;
+
+	}
+
+}
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 

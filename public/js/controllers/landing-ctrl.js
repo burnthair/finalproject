@@ -8,8 +8,7 @@ app.controller('landingCtrl', function($scope, $location, landingService) {
     landingService.setSearch(param);
   };
   $scope.seeWhats = function() {
-    landingService.setSearch("");
-    landingService.setName($scope.name);
+    landingService.setSearch("restaurants");
     $location.path("/restaurant");
   };
   // function notificationsCtrl($scope, $interval) {
@@ -20,7 +19,5 @@ app.controller('landingCtrl', function($scope, $location, landingService) {
   //   $interval(fun, 10000);
   // };
 
-  
-  $scope.userName;
 
 });
