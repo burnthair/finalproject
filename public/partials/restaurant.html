@@ -2,15 +2,22 @@
   <img class="left-arrow" ng-click="toLanding()" src="./img/left_arrow.svg" alt="">
   <input class="restaurant-search" type="text" placeholder="filter results" ng-model="search">
   <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
-  <h4>displaying {{ titleTerm }} restuarants within a mile</h4>
+   <h4>displaying {{ titleTerm }} restuarants within a mile</h4> 
   <div class="restaurant-list-container">
     
 
     <div class="container-of-restaurant-list-container" ng-repeat="place in data track by $index">
+<<<<<<< HEAD
 
       <ng-click ng-click="panelSlide=!panelSlide">
+=======
+    
+      <ng-click ng-click="expand(place)">
+>>>>>>> 735fe0bcb98da6bddd77d74f5c34b729ea1f4d7d
         <restaurant-list-item ></restaurant-list-item>
+        <!-- <button type="button">Go Here</button> -->
       </ng-click>
+<<<<<<< HEAD
 
       <div ng-show="panelSlide"class="restaurant-list-item">
               <input type="text" placeholder="Input optional Message" ng-model="message">
@@ -18,6 +25,19 @@
               type="button">Submit</button >
       </div>
 
+=======
+               
+       <div ng-slide-down="place.showfull" class="restaurant-list-item">
+         <h2>Eat at {{place.name}} </h2>
+        <select ng-model="time" ng-options="x for x in times"></select>
+        <input id="UserName" type="text" placeholder="Enter Your Name" ng-model="userName">
+        <input id="UserEmail" type="email" placeholder="Enter Your Email" ng-model="userEmail">
+        <input type="text" placeholder="Input optional Message" ng-model="message">
+        <button ng-click="setData(place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
+              type="button">Submit</button >
+      </div>  
+     
+>>>>>>> 735fe0bcb98da6bddd77d74f5c34b729ea1f4d7d
   </div>
   <button type="" ng-submit="">WHAT'S EVERYONE ELSE HAVING?</button>
 

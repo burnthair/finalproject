@@ -12,7 +12,15 @@ app.controller('landingCtrl', function($scope, $location, landingService) {
     landingService.setName($scope.name);
     $location.path("/restaurant");
   };
+  // function notificationsCtrl($scope, $interval) {
+  //   var fun = function () {
+  //     $scope.search = foods[Math.floor(Math.random()*20)];
+  //   };
+  //   fun();
+  //   $interval(fun, 10000);
+  // };
 
+  
   $scope.userName;
 
 });
