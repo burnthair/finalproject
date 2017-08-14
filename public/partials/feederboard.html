@@ -8,7 +8,12 @@
     <option value="">DTE</option>
     <option value="">Ford</option>
   </select>
+  <div id="search" >
+        <input type='text' ng-model='resName' placeholder="Search restaurant"/>
+        <!-- <li ng-repeat="person in place.resname | filter:query | orderBy: 'place.parson'">{{ person }}</li> -->
+
+  </div>
   <div class="feederboard-list-container">
-    <feederboard-item ng-repeat="place in data track by $index"></feederboard-item>
+    <feederboard-item ng-repeat="place in data | filter:resName track by $index"></feederboard-item>
   </div>
 </div>

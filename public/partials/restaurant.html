@@ -4,22 +4,20 @@
   <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
   <h4>displaying {{ titleTerm }} restuarants within a mile</h4>
   <div class="restaurant-list-container">
-
-
     
-         
+
     <div class="container-of-restaurant-list-container" ng-repeat="place in data track by $index">
-    
+
       <ng-click ng-click="panelSlide=!panelSlide">
         <restaurant-list-item ></restaurant-list-item>
       </ng-click>
-              
+
       <div ng-show="panelSlide"class="restaurant-list-item">
               <input type="text" placeholder="Input optional Message" ng-model="message">
               <button ng-click="setData(place.id,place.name,personName, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message)"
               type="button">Submit</button >
       </div>
-    
+
   </div>
   <button type="" ng-submit="">WHAT'S EVERYONE ELSE HAVING?</button>
 
