@@ -297,7 +297,3 @@ li, p {
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 
-@font-face {
-    font-family: "Automania";
-    src: url('/css/AUTOMANI.TTF');
-}
