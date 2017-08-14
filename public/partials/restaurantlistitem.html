@@ -1,16 +1,18 @@
 <div class="restaurant-list-item">
-  <div class="rli-image-container">
-    <img src="{{ place.image_url }}" alt="">
-  </div>
+  <img class="rli-image" src="{{ place.image_url }}" alt="">
   <div class="rli-detail-container">
-    <ul>
-      <li><a href="{{ place.resimg }}" target="_blank">{{ place.name }}</a></li>
-      <li>{{ place.location.address1 }}</li>
-      <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
-      <li>{{ place.display_phone }}</li>
+    <p><a href="{{ place.url }}" target="_blank">{{ place.name }}</a></p>
+    <div class="rli-location-phone">
+      <ul>
+        <li>{{ place.location.address1 }}</li>
+        <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
+        <li>{{ place.display_phone }}</li>
+      </ul>
+    </div>
+    <div class="rli-rating-price">
       <li>{{ place.rating }}</li>
       <li>{{ place.price }}</li>
-    </ul>
+    </div>
   </div>
   <!-- <div class="rli-suggested-by">
     <p>Suggested By: suggested by</p>

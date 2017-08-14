@@ -92,12 +92,6 @@ router.post("/reserve", function(req, res){
     req.body.time
   ];
 
-
-
-
-
-
-
   // Takes values and iserts data into database
   conPool.pool.connect(function(err, client, done) {
 
@@ -147,17 +141,18 @@ router.get("/reserve", function(req, res) {
   conPool.pool.connect(function(err, client, done) {
     client.query(
     'SELECT resid\
+    ,personorg\
     ,resname\
     ,resaddress1\
     ,resaddress2\
     ,resrating\
     ,resprice\
     ,resimg\
-    ,count(distinct personemail) as count\
+    ,count(distinct personname) as count\
     ,array_agg(t.personname) as person\
     ,array_agg(cast(t.personname::text||\'@\'||t.persontime::text||\': \' ||t.personmsg::text as varchar)) as messages\
      FROM public.customer t \
-     GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice,resimg',
+     GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice,resimg,personorg',
     function(err, result) {
       done();
       if (err) return console.error(err);

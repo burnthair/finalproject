@@ -1,18 +1,14 @@
 <div class="feederboard-item">
-  <div class="fb-image-container">
-    <img src="http://via.placeholder.com/350x250" alt="">
+  <div class="fb-ranking">
+    <h1>#{{ $index + 1 }}</h1>
   </div>
   <div class="fb-detail-container">
     <ul>
       <li>{{place.count}}</li>
-      <a href="{{ place.resimg }}"><li>{{ place.resname }}</li></a>
-      <li>{{ place.resaddress1 }}</li>
-      <li>{{ place.resaddress2 }}</li>
-      <li>{{ place.resprice }}</li>
-      <li>{{ place.resrating }}</li>
+      <li>{{ place.resname }}</li>
     </ul>
   </div>
   <div class="fb-joined-by">
-    <p ng-repeat="person in place.person track by $index">{{ person }}</p>
+    <p ng-repeat="message in place.messages track by $index">{{ message }}</p>
   </div>
 </div>

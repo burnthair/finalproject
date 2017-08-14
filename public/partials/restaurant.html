@@ -13,11 +13,11 @@
         <!-- <button type="button">Go Here</button> -->
       </ng-click>
                
-       <div ng-slide-down="place.showfull" class="restaurant-list-item">
-         <h2>Eat at {{place.name}} </h2>
+       <div ng-slide-down="place.showfull" class="restaurant-list-item-expansion">
+         <h2>Eat at {{place.name}}</h2>
         <select ng-model="time" ng-options="x for x in times"></select>
         <input id="UserName" type="text" placeholder="Enter Your Name" ng-model="userName">
-        <input id="UserEmail" type="email" placeholder="Enter Your Email" ng-model="userEmail" required>
+        <input id="UserEmail" type="email" placeholder="Enter Your Email" ng-model="userEmail">
         <input type="text" placeholder="Input optional Message" ng-model="message">
         <button ng-click="setData(place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
               type="button">Submit</button >

@@ -22,11 +22,11 @@ time, mark, audio, video {
 
 /* REMOVE li STYLING */
 ul {
-  list-style: none;
+  list-style-type: none;
 }
 
 /* SET FONT FAMILIES*/
-h1, button, h4 {
+h1, button, h2, h4 {
  font-family: league-gothic, sans-serif;
 
 }
@@ -45,6 +45,11 @@ text-shadow: 0 0.02em 0.08em #444;
 
 }
 
+h2 {
+	font-weight: 700;
+	font-size: 1rem;
+}
+
 h3 {
 	display: none;
   font-size: 6vw;
@@ -52,7 +57,7 @@ h3 {
 }
 
 h4 {
-	color: #ff86d5;
+	color: #22d4d4;
 	text-align: center;
 }
 
@@ -93,8 +98,9 @@ button:hover {
 }
 
 li, p {
-	font-size: 3vw;
+	font-size: 1rem;
 	line-height: 1em;
+	list-style-type: none;
 }
 
 /* LANDING VIEW */
@@ -120,7 +126,7 @@ li, p {
 .restaurants {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: #c6c6e0;
+	background-color: white;
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
@@ -147,46 +153,77 @@ li, p {
 	right: 3vh;
 }
 
+.container-of-restaurant-list-container {
+	width: 100%;
+}
+
 .restaurant-list-container {
-	background-color: #242f3c;
+	background-color: #ccc;
 	width: 90vw;
 	box-sizing: border-box;
-	max-height: 62vh;
+	max-height: 72vh;
 	overflow-y: scroll;
 	margin: 2vh;
+	border-radius: 4px;
+	box-shadow: 0 0.1em 0.3em #888;
+	position: relative;
+	 border-bottom-width: 100px;
+
+	 border-bottom-style: solid;
+	
+ -webkit-border-image: linear-gradient(to top, black, rgba(0,0,0,0)) 1 100%; 
+
 }
+
+ /* .restaurant-list-container {
+	content: "";
+	width: 100%;
+	height: 100px;
+	background: linear-gradient(rgba(200,200,200,0.1), rgba(200,200,200,0.4));
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}  */
 
 .restaurant-list-item {
 	background-color: white;
-	margin: 10px;
+    border-radius: 4px;
+    margin: 4px auto;
+    width: 98%;
+    box-shadow: 0 0.1em 0.3em #888;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 120px;
+    overflow: hidden;
 }
 
 .restaurant-list-item * {
 	padding: 2px;
 }
 
-.rli-image-container {
-	width: 25%;
-}
-
-.rli-image-container img {
-	display: block;
-	width: 90%;
+.rli-image {
+	display: inline-block;
+	width: 32%;
 	box-sizing: border-box;
 	text-align: center;
-	margin: 0 auto;
 }
 
 .rli-detail-container {
-	width: 40%;
-	box-sizing: border-box;
+	width: 68%;
 }
 
-.rli-suggested-by, .rli-joined-by {
-	width: 20%;
+.rli-location-phone {
+	/* width: 40%; */
+	box-sizing: border-box;
+	width: 60%;
+	display: inline-block;
+}
+
+.rli-rating-price {
+	width: 33%;
+	box-sizing: border-box;
+	display: inline-block;
 }
 
 .feederboard {
@@ -237,6 +274,18 @@ li, p {
 	width: 30%;
 	height: 90%;
 	overflow-y: scroll;
+}
+
+.restaurant-list-item-expansion {
+	background-color: white;
+	margin: 1vw auto;
+	width: 98%;
+	border-radius: 0 0 4px 4px;
+	text-align: center;
+}
+
+.restaurant-list-item-expansion input {
+	margin: 1vh;
 }
 
 #taco-drink {
