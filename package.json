@@ -5,10 +5,12 @@
   "main": "server.js",
   "dependencies": {
     "angular": "^1.6.5",
+    "angular-modal-service": "^0.12.1",
     "angular-pageslide-directive": "^2.1.4",
     "angular-route": "^1.6.5",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "ng-slide-down": "^0.4.2",
     "pg": "^7.1.0",
     "request": "^2.81.0",
     "url": "^0.11.0"

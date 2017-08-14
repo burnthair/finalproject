@@ -5,6 +5,7 @@ var app = angular.module('lunchModule');
 app.controller('feederboardCtrl', function ($scope, resService, $location) {
   // Assign the
   $scope.data = resService.returnData();
+  console.log($scope.data);
   // Create function to allow routing on click of navigation buttons
   $scope.toLanding = function() {
     $location.path("/landing");

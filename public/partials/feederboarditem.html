@@ -4,9 +4,10 @@
   </div>
   <div class="fb-detail-container">
     <ul>
-      <a href="{{ place.url }}"><li>{{ place.resname }}</li></a>
-      <li>{{ place.location.address1 }}</li>
-      <li>{{ place.location.city }}, {{ place.location.state }} {{ place.location.zip_code }}</li>
+      <li>{{place.count}}</li>
+      <a href="{{ place.resimg }}"><li>{{ place.resname }}</li></a>
+      <li>{{ place.resaddress1 }}</li>
+      <li>{{ place.resaddress2 }}</li>
       <li>{{ place.resprice }}</li>
       <li>{{ place.resrating }}</li>
     </ul>
