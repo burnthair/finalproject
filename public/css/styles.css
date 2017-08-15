@@ -46,8 +46,10 @@ text-shadow: 0 0.02em 0.08em #444;
 }
 
 h2 {
+	text-align: left;
 	font-weight: 700;
 	font-size: 1rem;
+	letter-spacing: 0.1em;
 }
 
 h3 {
@@ -59,6 +61,8 @@ h3 {
 h4 {
 	color: #22d4d4;
 	text-align: center;
+	font-size: 1.2rem;
+  letter-spacing: 0.1em;
 }
 
 input {
@@ -92,15 +96,26 @@ button {
 }
 
 button:hover {
+	box-shadow: 0em 0.1em 0.8em #666;
+	transform: translate(0,-.2vh);
+}
 
-	  box-shadow: 0em 0.1em 0.8em #666;
-		transform: translate(0,-.2vh);
+button:active {
+	background-color: #00a2a3;
+	box-shadow: 0em 0.1em 0.3em #666;
+	transform: translate(0,0);
 }
 
 li, p {
 	font-size: 1rem;
 	line-height: 1em;
 	list-style-type: none;
+}
+
+a:link {
+	text-decoration: none;
+	color: #00a2a3;
+	font-weight: 700;
 }
 
 /* LANDING VIEW */
@@ -133,15 +148,15 @@ li, p {
 }
 
 .left-arrow, .right-arrow {
-	width: 9vw;
+	width: 10vw;
 	position: absolute;
-	top: 5vh;
+	top: 6vh;
 }
 
 .home-button {
-	width: 7vw;
+	width: 8vw;
 	position: absolute;
-	top: 4vh;
+	top: 5vh;
 	right: 3vh;
 }
 
@@ -161,17 +176,17 @@ li, p {
 	background-color: #ccc;
 	width: 90vw;
 	box-sizing: border-box;
-	max-height: 72vh;
+	max-height: 64vh;
 	overflow-y: scroll;
 	margin: 2vh;
 	border-radius: 4px;
 	box-shadow: 0 0.1em 0.3em #888;
 	position: relative;
-	 border-bottom-width: 100px;
+	 /*border-bottom-width: 100px;
 
 	 border-bottom-style: solid;
-	
- -webkit-border-image: linear-gradient(to top, black, rgba(0,0,0,0)) 1 100%; 
+
+ -webkit-border-image: linear-gradient(to top, black, rgba(0,0,0,0)) 1 100%;*/
 
 }
 
@@ -303,6 +318,7 @@ li, p {
 
 	#food-type-search, #food-type-submit {
 		width: 50vw;
+		position: relative;
 	}
 
 	#food-type-skip {
@@ -314,24 +330,23 @@ li, p {
 
 @media (min-width:961px) {
 	#landing-heading{
-		
+
 
 	}
 
-	#food-type-submit {
-		display: inline-block;
 
+
+	.landing-title-container {
+		top: 14vh;
 	}
 
-	#food-type-search {
-	
-	}
+
 
 	#food-group {
 		left:2vw;
 		max-width: 40vw;
 		top: 60vh;
-		
+
 	}
 
 	#food-type-skip {
@@ -342,7 +357,28 @@ li, p {
 	}
 
 }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1025px) {
+	h1 {
+		font-size: 16vw;
+		position: relative;
+		z-index: 100;
+	}
+	#food-type-submit, #food-type-search {
+		display: inline-block;
+		width: 40%;
+		margin: 6% 20px;
+		z-index: 100;
+	}
+	#food-group {
+		left: 0;
+		max-width: none;
+		width: 90%;
+		top: 0;
+		opacity: 0.6;
+		z-index: 0;
+	}
+	#food-type-skip {
+		right: 35vw;
+	}
+}
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }
-
-

@@ -32,8 +32,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="0.75906289"
-     inkscape:cx="83.058093"
-     inkscape:cy="116.9518"
+     inkscape:cx="62.43134"
+     inkscape:cy="136.08277"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -56,10 +56,10 @@
      transform="translate(-13.732143,-291.19308)"
      id="layer1">
     <path
-       style="fill:#870058;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 102.48214,492.81944 73.75,0 0,97.57316 95.75,0 0,-224.24067 -95.75,-74.95885 -73.75,0 -88.749997,74.95885 0,224.24067 88.749997,0 z"
+       style="fill:#ff616f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 112.48214,510.98471 59,0 0,79.40789 100.5,0 0,-224.24067 -129.125,-74.95885 -129.124997,74.95885 0,224.24067 98.749997,0 z"
        id="path5659"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
+       sodipodi:nodetypes="cccccccccc" />
   </g>
 </svg>
