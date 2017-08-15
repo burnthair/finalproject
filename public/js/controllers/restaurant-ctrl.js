@@ -3,7 +3,7 @@ var app = angular.module('lunchModule');
 
 // Create the controller for the Restaurant List view
 app.controller('restaurantCtrl', function($scope, $location, landingService, resService) {
-  
+
   //$scope.panelSlide=false;
 
 
@@ -31,6 +31,9 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
   $scope.toFeederboard = function() {
     $location.path("/feederboard");
   };
+
+  $scope.resName = ""; //Scope a resName to filter by restaurant name in restaurant page
+
   // uses function from resService to take the info from clicked div and send to to database
   $scope.setData = function (id, name, personName, email ,address1, address2, price, rating, message, placeimg, time) {
     resService.setData(id, name, personName, email, address1, address2, price, rating, message, placeimg, time)
