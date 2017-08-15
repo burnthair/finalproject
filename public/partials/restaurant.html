@@ -16,10 +16,10 @@
         <input id="UserName" type="text" placeholder="Enter Your Name" ng-model="userName">
         <input id="UserEmail" type="email" placeholder="Enter Your Email" ng-model="userEmail">
         <input type="text" placeholder="Input optional Message" ng-model="message">
-        <button ng-click="setData(place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
-          type="button">Submit</button >
+        <button ng-click="setData('Grand Circus',place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
+              type="button">Submit</button >
       </div>
     </div>
+    <button type="button" ng-click="getData()">WHAT'S EVERYONE ELSE HAVING?</button>
   </div>
-  <button type="" ng-submit="">WHAT'S EVERYONE ELSE HAVING?</button>
 </div>

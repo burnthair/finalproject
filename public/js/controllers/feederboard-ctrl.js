@@ -4,6 +4,7 @@ var app = angular.module('lunchModule');
 // Create the controller for the Feederboard view
 app.controller('feederboardCtrl', function ($scope, resService, $location) {
   // Assign the
+  $scope.find="Grand Circus";
   $scope.data = resService.returnData();
   console.log($scope.data);
   $scope.resName = ""; //Scope a resName to filter by restaurant name in feederboard
