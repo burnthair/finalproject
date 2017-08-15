@@ -9,7 +9,7 @@ app.factory("resService", function ($http, $httpParamSerializer) {
 
   // Function takes parameters from Angular item to send to database
   function setData(personorg,placeid, placename, personName, useremail, placedisplayaddress1, placedisplayaddress2, placeprice, placerating, message, placeimage_url, time) {
-    
+
     var data = {
       org: personorg,
       id: placeid,
@@ -29,6 +29,9 @@ app.factory("resService", function ($http, $httpParamSerializer) {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       url: "/api/reserve",
       data: $.param(data)
+    }).then(function(success){
+      feederData = success.data.rows;
+      console.log('setData', feederData);
     });
     return p;
   };
@@ -41,6 +44,7 @@ app.factory("resService", function ($http, $httpParamSerializer) {
     })
     .then(function(response) {
       feederData = response.data.rows;
+      console.log('getData', feederData);
       return feederData;
     });
     return p;

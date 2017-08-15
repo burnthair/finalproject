@@ -38,10 +38,12 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
       $location.path("/feederboard");
     })
   }
+
   // uses function from resService to take the info from clicked div and send to to database
   $scope.setData = function (id, name, personName, email ,address1, address2, price, rating, message, placeimg, time) {
     resService.setData(id, name, personName, email, address1, address2, price, rating, message, placeimg, time)
       .then(function(success) {
+        console.log(success);
         return resService.getData();
       })
       .then(function(success) {

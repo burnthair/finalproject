@@ -4,6 +4,12 @@ var app = angular.module('lunchModule');
 // Create the controller for the Feederboard view
 app.controller('feederboardCtrl', function ($scope, resService, $location) {
   // Assign the
+  $scope.expand = function (item) {
+    angular.forEach($scope.data, function (currentItem) {
+      currentItem.showfull = currentItem === item && !currentItem.showfull;
+    });
+  };
+
   $scope.find="Grand Circus";
   $scope.data = resService.returnData();
   console.log($scope.data);

@@ -59,7 +59,7 @@ router.get("/search/:searchTerm", function(req, res) {
       longitude: '-83.0519076',
       sort_by: 'distance'
     },
-    headers: 
+    headers:
     {    'postman-token': 'feb7b54b-358d-36e6-e292-d8f3ed03a637',
         'cache-control': 'no-cache',
         authorization: 'Bearer '+auth.access_token
@@ -132,10 +132,11 @@ router.post("/reserve", function(req, res){
     function(err, result) {
         // console.log(err);
       done();
+      res.json(result);
     });
   });
   //when response is good, send good status back to angular to set off promise chain
-  res.sendStatus(200);
+  // res.sendStatus(200);
 });
 
 router.get("/reserve", function(req, res) {
@@ -151,7 +152,7 @@ router.get("/reserve", function(req, res) {
     ,resimg\
     ,cast(count(distinct personname) as integer) as count\
     ,array_agg(t.personname) as person\
-    ,array_agg(cast(t.personname::text||\'@\'||t.persontime::text||\': \' ||t.personmsg::text as varchar)) as messages\
+    ,array_agg(cast(t.personname::text||\' @ \'||t.persontime::text||\': \' ||t.personmsg::text as varchar)) as messages\
      FROM public.customer t \
      GROUP BY	resid, resname, resaddress1, resaddress2, resrating,resprice,resimg,personorg\
      order by count desc',

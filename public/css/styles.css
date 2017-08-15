@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, strong, sub, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -26,12 +26,12 @@ ul {
 }
 
 /* SET FONT FAMILIES*/
-h1, button, h2, h4 {
+h1, button, h2, h4, h5 {
  font-family: league-gothic, sans-serif;
 
 }
 
-h3, input,  p, li {
+h3, input,  p, li, select {
 	font-family: 'Scope One', serif;
 }
 
@@ -41,15 +41,15 @@ h1 {
    font-weight: 900;
 	line-height: 0.9em;
   color: white;
-text-shadow: 0 0.02em 0.08em #444;
-
+	text-shadow: 0 0.02em 0.08em #444;
 }
 
 h2 {
-	text-align: left;
 	font-weight: 700;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	letter-spacing: 0.1em;
+	margin: 1vh auto;
+	color: #00a2a3
 }
 
 h3 {
@@ -65,15 +65,21 @@ h4 {
   letter-spacing: 0.1em;
 }
 
+h5 {
+	font-size: 1.8rem;
+	font-weight: 900;
+	color: #00a2a3;
+}
+
 input {
-  padding: 1.5vh;
+  padding: 1vh 1.4vh;
   border: none;
   border-radius: 4px;
   width: 90%;
     box-shadow: 0 0.1em 0.3em #888;
   margin: 4vh 0;
 	box-sizing: border-box;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 input.restaurant-search {
@@ -90,7 +96,7 @@ button {
   box-shadow: 0em 0.1em 0.3em #666;
   padding: 1.5vh;
 	margin: 1vh 0;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	letter-spacing: 2.5px;
 
 }
@@ -106,10 +112,29 @@ button:active {
 	transform: translate(0,0);
 }
 
+select {
+  padding: 1vh 1.4vh;
+  border: none;
+  border-radius: 4px;
+  width: 90%;
+    box-shadow: 0 0.1em 0.3em #888;
+  margin: 1vh auto;
+	box-sizing: border-box;
+	font-size: 1.2rem;
+}
+
+option {
+	max-width: 100%;
+}
+
 li, p {
-	font-size: 1rem;
+	font-size: 4.2vw;
 	line-height: 1em;
 	list-style-type: none;
+}
+
+sup {
+	font-size: 1.2rem;
 }
 
 a:link {
@@ -150,7 +175,7 @@ a:link {
 .left-arrow, .right-arrow {
 	width: 10vw;
 	position: absolute;
-	top: 6vh;
+	top: 5.5vh;
 }
 
 .home-button {
@@ -168,7 +193,7 @@ a:link {
 	right: 3vh;
 }
 
-.container-of-restaurant-list-container {
+.container-of-restaurant-list-item {
 	width: 100%;
 }
 
@@ -182,35 +207,19 @@ a:link {
 	border-radius: 4px;
 	box-shadow: 0 0.1em 0.3em #888;
 	position: relative;
-	 /*border-bottom-width: 100px;
-
-	 border-bottom-style: solid;
-
- -webkit-border-image: linear-gradient(to top, black, rgba(0,0,0,0)) 1 100%;*/
-
 }
-
- /* .restaurant-list-container {
-	content: "";
-	width: 100%;
-	height: 100px;
-	background: linear-gradient(rgba(200,200,200,0.1), rgba(200,200,200,0.4));
-	position: absolute;
-	left: 0;
-	bottom: 0;
-}  */
 
 .restaurant-list-item {
 	background-color: white;
-    border-radius: 4px;
-    margin: 4px auto;
-    width: 98%;
-    box-shadow: 0 0.1em 0.3em #888;
+  border-radius: 4px;
+  margin: 4px auto;
+  width: 98%;
+  box-shadow: 0 0.1em 0.3em #888;
 	display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    height: 120px;
-    overflow: hidden;
+  align-items: center;
+  box-sizing: border-box;
+  height: 120px;
+  overflow: hidden;
 }
 
 .restaurant-list-item * {
@@ -239,38 +248,61 @@ a:link {
 	width: 33%;
 	box-sizing: border-box;
 	display: inline-block;
+	text-align: right;
 }
 
 .feederboard {
 	width: 100vw;
 	min-height: 100vh;
-	background-color: #c6c6e0;
+	background-color: white;
 	display: flex;
 	flex-flow: column wrap;
 	align-items: center;
 }
 
 .feederboard-list-container {
-	background-color: #242f3c;
+	background-color: #ccc;
 	width: 90vw;
 	box-sizing: border-box;
-	max-height: 80vh;
+	max-height: 64vh;
 	overflow-y: scroll;
 	margin: 2vh;
-}
+	border-radius: 4px;
+	box-shadow: 0 0.1em 0.3em #888;
+	position: relative;
+	}
 
-.feederboard-item {
+feederboard-item {
 	background-color: white;
-	margin: 10px auto;
+	border-radius: 4px;
+	margin: 4px auto;
+	width: 98%;
+	box-shadow: 0 0.1em 0.3em #888;
 	display: flex;
 	flex-flow: row wrap;
-	height: 16vh;
+	align-items: center;
+	height: 80px;
+	box-sizing: border-box;
+	overflow: hidden;
 }
+/*
+.feederboard-item {
+	width: 100%;
+}*/
 
-.fb-image-container, .fb-detail-container, .fb-joined-by {
+.fb-image-container {
 	box-sizing: border-box;
 	width: 20%;
 	margin: 3vw;
+}
+
+.fb-detail-container {
+	width: 76%;
+	display: inline-block;
+}
+
+.fb-detail-container ul {
+	display: inline-block;
 }
 
 .fb-image-container {
@@ -285,9 +317,38 @@ a:link {
 	margin: 0 auto;
 }
 
-.fb-joined-by {
-	width: 30%;
+.feederboard-item-expansion-container {
+	background-color: white;
+	margin: 1vw auto;
+	width: 98%;
+	border-radius: 0 0 4px 4px;
+	text-align: left;
+}
+
+.feederboard-item-expansion {
+	background-color: white;
+	margin: 10px;
+	width: 90%;
 	height: 90%;
+}
+
+.feederboard-item-expansion p {
+	margin: 5px;
+}
+
+.fb-ranking {
+	display: inline-block;
+	margin: 4vw;
+}
+
+.fb-ranking h1 {
+	font-size: 10vw;
+}
+
+.fb-joined-by {
+	text-align: left;
+	width: 100%;
+	height: 100%;
 	overflow-y: scroll;
 }
 
@@ -325,43 +386,65 @@ a:link {
 		position: fixed;
     bottom: 8vh;
     right: 25vw;
-    width: 50vw;}
+    width: 50vw;
+	}
+
+	.left-arrow, .right-arrow {
+		top: 3.8vh;
+	}
+
+	h4, button {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	li, p, h2 {
+		font-size: 1.3rem;
+	}
+
+	.restaurant-list-item {
+		height: 160px;
+	}
 }
 
 @media (min-width:961px) {
-	#landing-heading{
-
-
-	}
-
-
 
 	.landing-title-container {
 		top: 14vh;
 	}
 
-
-
 	#food-group {
 		left:2vw;
 		max-width: 40vw;
 		top: 60vh;
-
 	}
 
 	#food-type-skip {
 		right: 8vw;
 		bottom: 14vh;
 		max-width: 30vw;
-
 	}
 
 }
 @media (min-width:1025px) {
+	.restaurant-list-item:hover {
+		background-color: #ebebeb;
+	}
+
 	h1 {
 		font-size: 16vw;
 		position: relative;
 		z-index: 100;
+	}
+	.restaurant-list-container {
+		width: 64vw;
+		max-height: 72vh;
+		position: absolute;
+		top: 20vh;
+		left: 32vw;
 	}
 	#food-type-submit, #food-type-search {
 		display: inline-block;

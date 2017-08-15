@@ -3,27 +3,31 @@
   <input class="restaurant-search" type="text" placeholder="filter results" ng-model="resName">
   <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
    <h4>displaying {{ titleTerm }} restuarants within a mile</h4>
+
+
   <div class="restaurant-list-container">
-
-    <div class="container-of-restaurant-list-container" ng-repeat="place in data | filter:resName track by $index">
-
+    <div class="container-of-restaurant-list-item" ng-repeat="place in data | filter:resName track by $index">
       <ng-click ng-click="expand(place)">
         <restaurant-list-item ></restaurant-list-item>
       </ng-click>
 
       <div ng-slide-down="place.showfull" class="restaurant-list-item-expansion">
         <h2>eat at {{place.name}}</h2>
-        <select ng-model="time" ng-options="x for x in times">
-          <option value="" disabled selected>choose your time</option>
-        </select>
-        <input id="UserName" type="text" placeholder="Enter Your Name" ng-model="userName">
-        <input id="UserEmail" type="email" placeholder="Enter Your Email" ng-model="userEmail">
-        <input type="text" placeholder="Input optional Message" ng-model="message">
-        <button ng-click="setData('Grand Circus',place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
-              type="button">Submit</button >
+        <form name="userInput" novalidate="" ng-submit="setData('Grand Circus', place.id, place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)">
+          <select ng-model="time" ng-options="x for x in times" required>
+            <!-- <option value="" disabled selected>time</option> -->
+          </select>
+          <input id="UserName" type="text" name="name" placeholder="name" ng-model="userName" required>
+          <!-- <p ng-show="userInput.name.$error.minlength">The name is too small</p> -->
+          <input id="UserEmail" type="email" name="email" placeholder="email" ng-model="userEmail" required>
+          <input type="text" name="message" placeholder="message (optional)" ng-model="message">
+          <!-- <button ng-click="setData('Grand Circus',place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
+                type="button">SUBMIT</button > -->
+          <button type="submit" ng-disabled="userInput.$invalid">SUBMIT</button>
+        </form>
       </div>
     </div>
-    <button type="button" ng-click="getData()">WHAT'S EVERYONE ELSE HAVING?</button>
 
   </div>
+  <button type="button" ng-click="getData()">WHAT'S EVERYONE ELSE HAVING?</button>
 </div>

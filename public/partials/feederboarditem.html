@@ -1,14 +1,11 @@
-<div class="feederboard-item">
+<!-- <div class="feederboard-item"> -->
   <div class="fb-ranking">
-    <h1>#{{ $index + 1 }}</h1>
+    <h1><sup>#</sup>{{ $index + 1 }}</h1>
   </div>
   <div class="fb-detail-container">
     <ul>
-      <li>{{place.count}}</li>
-      <li>{{ place.resname }}</li>
+      <h5>{{ place.resname }}</h5>
+      <li>{{ place.count }} lunch buddies</li>
     </ul>
   </div>
-  <div class="fb-joined-by">
-    <p ng-repeat="message in place.messages track by $index">{{ message }}</p>
-  </div>
-</div>
+<!-- </div> -->

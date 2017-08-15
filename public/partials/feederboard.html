@@ -1,17 +1,23 @@
 <div class="feederboard">
   <img class="left-arrow" ng-click="toRestaurantList()" src="./img/left_arrow.svg" alt="">
-  <h4>THE FEEDERBOARD</h4>
-  <img class="home-button" ng-click="toLanding()" src="./img/home.svg" alt="">
-  <span id="group-label">Group: </span>
-  <select name="group"  value="Grand Circus" id="group-select" ng-model="find" ng-options="entry.personorg as entry.personorg for entry in data | unique: 'personorg'">
-    Select An Org
-  </select>
   <div id="search" >
-        <input type='text' ng-model='resName' placeholder="Search restaurant"/>
-        <!-- <li ng-repeat="person in place.resname | filter:query | orderBy: 'place.parson'">{{ person }}</li> -->
-
+    <input class="restaurant-search" type='text' ng-model='resName' placeholder="filter results"/>
   </div>
+  <img class="home-button" ng-click="toLanding()" src="./img/home.svg" alt="">
+  <h4>where everyone is going</h4>
   <div class="feederboard-list-container">
-    <feederboard-item ng-repeat="place in data | orderBy: place.count | filter:find |filter:resName track by $index"></feederboard-item>
+    <div class="container-of-feederboard-item" ng-repeat="place in data | orderBy: place.count | filter:find |filter:resName track by $index">
+      <ng-click>
+        <feederboard-item ng-click="expand(place)"></feederboard-item>
+      </ng-click>
+      <div ng-slide-down="place.showfull" class="feederboard-item-expansion-container">
+        <div class="feederboard-item-expansion">
+          <p ng-repeat="message in place.messages track by $index">{{ message }}</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <select name="group"  value="Grand Circus" id="group-select" ng-model="find" ng-options="entry.personorg as entry.personorg for entry in data | unique: 'personorg'">
+    <!-- <option value="" disabled selected>filter by group</option> -->
+  </select>
 </div>
