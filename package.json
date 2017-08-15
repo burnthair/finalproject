@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "angular": "^1.6.5",
+    "angular-filter": "^0.5.16",
     "angular-modal-service": "^0.12.1",
     "angular-pageslide-directive": "^2.1.4",
     "angular-route": "^1.6.5",

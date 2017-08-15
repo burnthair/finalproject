@@ -8,10 +8,10 @@ app.factory("resService", function ($http, $httpParamSerializer) {
   var feederData = [];
 
   // Function takes parameters from Angular item to send to database
-  function setData(placeid, placename, personName, useremail, placedisplayaddress1, placedisplayaddress2, placeprice, placerating, message, placeimage_url, time) {
+  function setData(personorg,placeid, placename, personName, useremail, placedisplayaddress1, placedisplayaddress2, placeprice, placerating, message, placeimage_url, time) {
     
     var data = {
-      org: 'Grand Circus',
+      org: personorg,
       id: placeid,
       name: placename,
       time: time,

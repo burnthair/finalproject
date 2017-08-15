@@ -33,7 +33,11 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
   };
 
   $scope.resName = ""; //Scope a resName to filter by restaurant name in restaurant page
-
+  $scope.getData=function(){
+    resService.getData().then(function(success){
+      $location.path("/feederboard");
+    })
+  }
   // uses function from resService to take the info from clicked div and send to to database
   $scope.setData = function (id, name, personName, email ,address1, address2, price, rating, message, placeimg, time) {
     resService.setData(id, name, personName, email, address1, address2, price, rating, message, placeimg, time)
