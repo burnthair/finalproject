@@ -24,6 +24,8 @@ app.factory("resService", function ($http, $httpParamSerializer) {
       message: message,
       placeimg: placeimage_url
     };
+
+    console.log(data);
     var p = $http({
       method: "POST",
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -31,7 +33,7 @@ app.factory("resService", function ($http, $httpParamSerializer) {
       data: $.param(data)
     }).then(function(success){
       feederData = success.data.rows;
-      console.log('setData', feederData);
+     // console.log('setData', feederData);
     });
     return p;
   };

@@ -1,7 +1,7 @@
 <div class="restaurants">
   <img class="left-arrow" ng-click="toLanding()" src="./img/left_arrow.svg" alt="">
   <input class="restaurant-search" type="text" placeholder="filter results" ng-model="resName">
-  <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
+  <img class="right-arrow" ng-click="getData()" src="./img/right_arrow.svg" alt="">
   <h4 id="displaying-restaurants-header">displaying {{ titleTerm }} restuarants within a mile</h4>
   <img id="burger" src="./img/burger.svg" alt="">
 
@@ -11,17 +11,17 @@
         <restaurant-list-item ></restaurant-list-item>
       </ng-click>
 
-      <div ng-slide-down="place.showfull" class="restaurant-list-item-expansion">
+      <div ng-slide-down="place.showfull" duration="0.5" class="restaurant-list-item-expansion">
         <h2>eat at {{place.name}}</h2>
-        <form name="userInput" novalidate="" ng-submit="setData('Grand Circus', place.id, place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)">
-          <select ng-model="time" ng-options="x for x in times" required>
-            <!-- <option value="" disabled selected>time</option> -->
+        <form name="userInput" novalidate="" ng-submit="setData('Grand Circus', place.id, place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, selectedTime)">
+          <select ng-model="selectedTime" ng-options="time for time in times" required>
+             <option value="" disabled selected>select time</option> 
           </select>
           <input id="UserName" type="text" name="name" placeholder="name" ng-model="userName" required>
           <!-- <p ng-show="userInput.name.$error.minlength">The name is too small</p> -->
           <input id="UserEmail" type="email" name="email" placeholder="email" ng-model="userEmail" required>
           <input type="text" name="message" placeholder="message (optional)" ng-model="message">
-          <!-- <button ng-click="setData('Grand Circus',place.id,place.name, userName, userEmail, place.location.display_address[0], place.location.display_address[1], place.price, place.rating, message, place.image_url, time)"
+          <!-- <button 
                 type="button">SUBMIT</button > -->
           <button type="submit" ng-disabled="userInput.$invalid">SUBMIT</button>
         </form>

@@ -17,7 +17,8 @@
       </div>
     </div>
   </div>
-  <select name="group"  value="Grand Circus" id="group-select" ng-model="find" ng-options="entry.personorg as entry.personorg for entry in data | unique: 'personorg'">
-    <!-- <option value="" disabled selected>filter by group</option> -->
+  <h4 id="group-label">group: </h4>
+  <select name="group" id="group-select" ng-model="find" ng-options="entry.personorg as entry.personorg for entry in data | unique: 'personorg'">
+    <option value>Show All</option> 
   </select>
 </div>

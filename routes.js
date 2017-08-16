@@ -76,6 +76,7 @@ router.get("/search/:searchTerm", function(req, res) {
 
 ///Post request to send data from yelp api for selected resturant on the resturant view to database for storage
 router.post("/reserve", function(req, res){
+
   // Collects values sent from angular ng-repeats  from yelp
   var values = [
     req.body.org,
@@ -97,7 +98,7 @@ router.post("/reserve", function(req, res){
 
     client.query(
     'DELETE from public.customer \
-    WHERE personemail=values($4::text)',
+    WHERE personname=values($4::text)',
     values,
     function (err, result) {
               done();
@@ -136,7 +137,7 @@ router.post("/reserve", function(req, res){
     });
   });
   //when response is good, send good status back to angular to set off promise chain
-  // res.sendStatus(200);
+  //res.sendStatus(200);
 });
 
 router.get("/reserve", function(req, res) {
