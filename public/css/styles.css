@@ -45,7 +45,6 @@ h1 {
 }
 
 h2 {
-	font-weight: 700;
 	font-size: 1.2rem;
 	letter-spacing: 0.1em;
 	margin: 1vh auto;
@@ -212,7 +211,8 @@ a:link {
 .restaurant-list-item {
 	background-color: white;
   border-radius: 4px;
-  margin: 4px auto;
+  margin: 0 auto;
+	margin-bottom: 1vh;
   width: 98%;
   box-shadow: 0 0.1em 0.3em #888;
 	display: flex;
@@ -285,6 +285,12 @@ feederboard-item {
 	box-sizing: border-box;
 	overflow: hidden;
 }
+
+.down-arrow{
+	position: relative;
+	bottom: 0;
+	transform: rotate(90deg) scale(0.2, 0.2);
+}
 /*
 .feederboard-item {
 	width: 100%;
@@ -319,7 +325,7 @@ feederboard-item {
 
 .feederboard-item-expansion-container {
 	background-color: white;
-	margin: 1vw auto;
+	margin: 0 auto;
 	width: 98%;
 	border-radius: 0 0 4px 4px;
 	text-align: left;
@@ -327,13 +333,13 @@ feederboard-item {
 
 .feederboard-item-expansion {
 	background-color: white;
-	margin: 10px;
+	margin-bottom: 5px;
 	width: 90%;
 	height: 90%;
 }
 
 .feederboard-item-expansion p {
-	margin: 5px;
+	margin-bottom: 5px;
 }
 
 .fb-ranking {
@@ -354,14 +360,15 @@ feederboard-item {
 
 .restaurant-list-item-expansion {
 	background-color: white;
-	margin: 1vw auto;
+	margin: 0 auto;
+	/*margin-bottom: 1vw;*/
 	width: 98%;
 	border-radius: 0 0 4px 4px;
 	text-align: center;
 }
 
 .restaurant-list-item-expansion input {
-	margin: 1vh;
+	margin-bottom: 1vh;
 }
 
 #taco-drink {
@@ -369,7 +376,7 @@ feederboard-item {
 	margin: 20px 0;
 }
 
-#food-group {display: none;}
+#food-group, #burger {display: none;}
 
 @media all and (min-width: 768px) {
 
@@ -401,13 +408,20 @@ feederboard-item {
 		font-size: 1.5rem;
 	}
 
-	li, p, h2 {
+	li, p {
 		font-size: 1.3rem;
 	}
 
 	.restaurant-list-item {
 		height: 160px;
 	}
+	.fb-ranking h1 {
+    font-size: 8vw;
+}
+.home-button {
+	top: 3vh;
+	right: 4vh;
+}
 }
 
 @media (min-width:961px) {
@@ -446,6 +460,19 @@ feederboard-item {
 		top: 20vh;
 		left: 32vw;
 	}
+	.feederboard-list-container {
+		width: 64vw;
+		max-height: 72vh;
+		position: absolute;
+		top: 20vh;
+		left: 32vw;
+	}
+	.fb-ranking h1 {
+		font-size: 4rem;
+	}
+	.home-button {
+		width: 3vw;
+	}
 	#food-type-submit, #food-type-search {
 		display: inline-block;
 		width: 40%;
@@ -463,5 +490,42 @@ feederboard-item {
 	#food-type-skip {
 		right: 35vw;
 	}
+	#displaying-restaurants-header, #fb-view-header {
+		position: absolute;
+		top: 18vh;
+		left: 34vw;
+	}
+	#skip-restaurants-button {
+		position: absolute;
+		top: 3vh;
+		right: 3vw;
+		width: 27vw;
+	}
+	#burger {
+		display: inline-block;
+		position: absolute;
+		width: 24vw;
+		left: 3vw;
+		bottom: 3vw;
+	}
+	.right-arrow {
+		display: none;
+	}
+	.left-arrow {
+		width: 4vw;
+	}
+	input.restaurant-search {
+		position: absolute;
+		width: 27vw;
+		top: 20vh;
+		left: 3vw;
+	}
+	#group-select {
+		position: absolute;
+		width: 27vw;
+		top: 32vh;
+		left: 3vw;
+	}
+
 }
 @media (min-width:1281px) { /* hi-res laptops and desktops */ }

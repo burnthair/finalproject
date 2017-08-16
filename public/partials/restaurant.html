@@ -2,8 +2,8 @@
   <img class="left-arrow" ng-click="toLanding()" src="./img/left_arrow.svg" alt="">
   <input class="restaurant-search" type="text" placeholder="filter results" ng-model="resName">
   <img class="right-arrow" ng-click="toFeederboard()" src="./img/right_arrow.svg" alt="">
-   <h4>displaying {{ titleTerm }} restuarants within a mile</h4>
-
+  <h4 id="displaying-restaurants-header">displaying {{ titleTerm }} restuarants within a mile</h4>
+  <img id="burger" src="./img/burger.svg" alt="">
 
   <div class="restaurant-list-container">
     <div class="container-of-restaurant-list-item" ng-repeat="place in data | filter:resName track by $index">
@@ -29,5 +29,5 @@
     </div>
 
   </div>
-  <button type="button" ng-click="getData()">WHAT'S EVERYONE ELSE HAVING?</button>
+  <button id="skip-restaurants-button" type="button" ng-click="getData()">WHAT'S EVERYONE ELSE HAVING?</button>
 </div>

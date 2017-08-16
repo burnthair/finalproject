@@ -4,7 +4,7 @@
     <input class="restaurant-search" type='text' ng-model='resName' placeholder="filter results"/>
   </div>
   <img class="home-button" ng-click="toLanding()" src="./img/home.svg" alt="">
-  <h4>where everyone is going</h4>
+  <h4 id="fb-view-header">where everyone is going</h4>
   <div class="feederboard-list-container">
     <div class="container-of-feederboard-item" ng-repeat="place in data | orderBy: place.count | filter:find |filter:resName track by $index">
       <ng-click>
