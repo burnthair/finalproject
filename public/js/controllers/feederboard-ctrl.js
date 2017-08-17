@@ -12,7 +12,7 @@ app.controller('feederboardCtrl', function ($scope, resService, $location) {
 
   // $scope.find="Grand Circus";
   $scope.data = resService.returnData();
-  console.log($scope.data);
+  //console.log($scope.data);
   $scope.resName = ""; //Scope a resName to filter by restaurant name in feederboard
   // Create function to allow routing on click of navigation buttons
   $scope.toLanding = function() {

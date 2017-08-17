@@ -341,6 +341,12 @@ feederboard-item {
 	margin: 0 auto;
 }
 
+div.feederboard-list-container > div > div > div > div,
+div.feederboard-list-container > div > div > div{
+	background-color:#FFFFFF;
+ 	color: #FF1744;
+}
+
 .feederboard-item-expansion-container {
 	background-color: white;
 	margin: 0 auto;
@@ -367,6 +373,7 @@ feederboard-item {
 
 .fb-ranking h1 {
 	font-size: 10vw;
+	color: #FF1744;
 }
 
 .fb-joined-by {
@@ -396,6 +403,7 @@ feederboard-item {
 
 #food-group, #burger {display: none;}
 
+/*I pad*/
 @media all and (min-width: 768px) {
 
 	/*#img-drink, #img-pizza, #img-taco, #img-wrap {display: block; position: absolute;}*/
@@ -442,6 +450,8 @@ feederboard-item {
 }
 }
 
+/*Ipad Pro, small laptop*/
+
 @media (min-width:961px) {
 
 	.landing-title-container {
@@ -461,6 +471,9 @@ feederboard-item {
 	}
 
 }
+
+
+/*Full desktop/larger screens*/
 @media (min-width:1025px) {
 	.restaurant-list-item:hover {
 		background-color: #ebebeb;

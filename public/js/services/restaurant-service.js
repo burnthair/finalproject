@@ -25,15 +25,15 @@ app.factory("resService", function ($http, $httpParamSerializer) {
       placeimg: placeimage_url
     };
 
-    console.log(data);
+    // console.log(data);
     var p = $http({
       method: "POST",
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       url: "/api/reserve",
       data: $.param(data)
     }).then(function(success){
-      feederData = success.data.rows;
-     // console.log('setData', feederData);
+      ///Request was good, do nothing
+      //Pull data in with getData
     });
     return p;
   };
@@ -46,7 +46,7 @@ app.factory("resService", function ($http, $httpParamSerializer) {
     })
     .then(function(response) {
       feederData = response.data.rows;
-      console.log('getData', feederData);
+     // console.log('getData', feederData);
       return feederData;
     });
     return p;

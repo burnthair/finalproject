@@ -6,7 +6,7 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
 
   //$scope.panelSlide=false;
 
-
+///
   $scope.expand = function (item) {
     angular.forEach($scope.data, function (currentItem) {
       currentItem.showfull = currentItem === item && !currentItem.showfull;
@@ -45,7 +45,7 @@ app.controller('restaurantCtrl', function($scope, $location, landingService, res
     //console.log(time, ", scope:", $scope.time);
     resService.setData(orgname,id, name, personName, email, address1, address2, price, rating, message, placeimg, time)
       .then(function(success) {
-        console.log(success);
+      //  console.log(success);
         return resService.getData();
       })
       .then(function(success) {

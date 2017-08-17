@@ -133,7 +133,7 @@ router.post("/reserve", function(req, res){
     function(err, result) {
         // console.log(err);
       done();
-      res.json(result);
+      res.status(200).json(result);
     });
   });
   //when response is good, send good status back to angular to set off promise chain

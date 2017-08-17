@@ -19,7 +19,7 @@ app.factory("landingService", function($http, $location) {
     .then(function(response) {
       payload = response.data.businesses;
 
-      if (term = "restaurants") {
+      if (term == "restaurants") {
         searchTerm = "all";
       } else {
         searchTerm = term;
